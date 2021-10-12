@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit backupGlobals="false" colors="true" bootstrap="tests/bootstrap.php">
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
+
+    <php>
+        <ini name="error_reporting" value="-1" />
+    </php>
+
+    <testsuites>
+        <testsuite name="lib">
+           <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

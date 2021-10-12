@@ -24,9 +24,16 @@ class Config
     private $secret;
 
     /**
+     * Timeout
+     *
+     * @var float $timeout
+     */
+    private $timeout = 5.0;
+
+    /**
      * @return string
      */
-    public function getBaseURL()
+    public function getBaseURL(): string
     {
         return $this->baseURL;
     }
@@ -35,7 +42,7 @@ class Config
      * @param string $baseURL
      * @return Config
      */
-    public function setBaseURL($baseURL)
+    public function setBaseURL(string $baseURL): Config
     {
         $this->baseURL = $baseURL;
         return $this;
@@ -44,7 +51,7 @@ class Config
     /**
      * @return string
      */
-    public function getClientId()
+    public function getClientId(): string
     {
         return $this->clientId;
     }
@@ -53,7 +60,7 @@ class Config
      * @param string $clientId
      * @return Config
      */
-    public function setClientId($clientId)
+    public function setClientId($clientId): Config
     {
         $this->clientId = $clientId;
         return $this;
@@ -62,7 +69,7 @@ class Config
     /**
      * @return string
      */
-    public function getSecret()
+    public function getSecret(): string
     {
         return $this->secret;
     }
@@ -71,9 +78,27 @@ class Config
      * @param string $secret
      * @return Config
      */
-    public function setSecret($secret)
+    public function setSecret($secret): Config
     {
         $this->secret = $secret;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getTimeout(): float
+    {
+        return $this->timeout;
+    }
+
+    /**
+     * @param float $timeout
+     * @return Config
+     */
+    public function setTimeout(float $timeout): Config
+    {
+        $this->timeout = $timeout;
         return $this;
     }
 }
