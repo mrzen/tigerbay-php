@@ -1,0 +1,24 @@
+{
+    "name": "mrzen/tigerbay",
+    "description": "Tigerbay PHP Client Library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mrzen\\Tigerbay\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leo Adamek",
+            "email": "leo.adamek@mrzen.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
