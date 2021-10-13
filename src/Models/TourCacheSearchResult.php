@@ -260,7 +260,7 @@ class TourCacheSearchResult
     /**
      * @return DateTimeInterface
      */
-    public function getEndData(): DateTimeInterface
+    public function getEndDate(): DateTimeInterface
     {
         return $this->endDate;
     }
