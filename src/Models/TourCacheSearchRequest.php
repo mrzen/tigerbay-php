@@ -58,11 +58,11 @@ class TourCacheSearchRequest
         $v = [];
 
         if ($this->getStartDate() !== null) {
-            $v['searchQuery.serviceDateRange.from'] = $this->getStartDate()->format('y-m-d');
+            $v['searchQuery.serviceDateRange.from'] = $this->getStartDate()->format('Y-m-d');
         }
 
         if ($this->getEndDate() !== null) {
-            $v['searchQuery.serviceDateRange.to'] = $this->getEndDate()->format('y-m-d');
+            $v['searchQuery.serviceDateRange.to'] = $this->getEndDate()->format('Y-m-d');
         }
 
         return $v;
