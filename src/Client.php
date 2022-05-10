@@ -8,6 +8,7 @@ use GuzzleHttp\HandlerStack;
 use Mrzen\Tigerbay\Middleware\Authentication;
 use Mrzen\Tigerbay\Middleware\Logger;
 use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\Serializer\Encoder\JsonDecode;
 use Symfony\Component\Serializer\Encoder\JsonEncode;
@@ -53,8 +54,8 @@ class Client
 
         $this->serializer = new Serializer(
             [
-                new DateTimeNormalizer(),
                 new ArrayDenormalizer(),
+                new DateTimeNormalizer(),
                 new ObjectNormalizer(
                     new ClassMetadataFactory(
                         new AnnotationLoader(new AnnotationReader()
@@ -62,7 +63,7 @@ class Client
                     ),
                     null,
                     null,
-                    new ReflectionExtractor()
+                    new PhpDocExtractor()
                 ),
             ],
             [new JsonDecode(), new JsonEncode()]

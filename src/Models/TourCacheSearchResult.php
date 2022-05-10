@@ -107,6 +107,11 @@ class TourCacheSearchResult
     private $perPersonGroupTravellerTotalDiscount;
 
     /**
+     * @var FlightGroup[] $flightGroups
+     */
+    private $flightGroups;
+
+    /**
      * @var string $refreshId
      */
     private $refreshId;
@@ -260,7 +265,7 @@ class TourCacheSearchResult
     /**
      * @return DateTimeInterface
      */
-    public function getEndData(): DateTimeInterface
+    public function getEndDate(): DateTimeInterface
     {
         return $this->endDate;
     }
@@ -578,6 +583,24 @@ class TourCacheSearchResult
     public function setTags(array $tags): TourCacheSearchResult
     {
         $this->tags = $tags;
+        return $this;
+    }
+
+    /**
+     * @return FlightGroup[]
+     */
+    public function getFlightGroups(): array
+    {
+        return $this->flightGroups;
+    }
+
+    /**
+     * @param FlightGroup[] $flightGroups
+     * @return TourCacheSearchResult
+     */
+    public function setFlightGroups(array $flightGroups): TourCacheSearchResult
+    {
+        $this->flightGroups = $flightGroups;
         return $this;
     }
 }
