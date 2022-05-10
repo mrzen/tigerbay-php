@@ -146,7 +146,6 @@ class Flight
      * @return bool
      * @deprecated Since 2022-05-10: Removed form upstream API 2022-05-06
      *             This function now always returns false for compatibility.
-     * @removed 2022-05-06
      */
     public function isDefault(): bool
     {
