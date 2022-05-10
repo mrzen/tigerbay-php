@@ -30,7 +30,6 @@
         "symfony/property-access": "^5.3",
         "doctrine/annotations": "^1.13",
         "phpdocumentor/reflection-docblock": "^5.2",
-        "psr/cache": "^2",
         "symfony/deprecation-contracts": "^2",
         "symfony/property-info": "^5",
         "symfony/string": "^5"
