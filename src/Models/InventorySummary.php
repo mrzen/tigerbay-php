@@ -41,6 +41,12 @@ class InventorySummary
     private $isCompanyStopSale;
 
     /**
+     * @var bool $isReleaseStopSale
+     * @since v1.2.0
+     */
+    private $isReleaseStopSale;
+
+    /**
      * @var bool $isClosed
      */
     private $isClosed;
@@ -210,5 +216,21 @@ class InventorySummary
     {
         $this->isFreeSell = $isFreeSell;
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isReleaseStopSale(): bool
+    {
+        return $this->isReleaseStopSale;
+    }
+
+    /**
+     * @param bool $isReleaseStopSale
+     */
+    public function setIsReleaseStopSale(bool $isReleaseStopSale): void
+    {
+        $this->isReleaseStopSale = $isReleaseStopSale;
     }
 }
