@@ -31,6 +31,12 @@ class InventorySummary
     private $isOnRequest;
 
     /**
+     * @var bool $isAllocationOnRequest
+     * @since 1.2.0 Added `isAllocationOnRequest` field
+     */
+    private $isAllocationOnRequest;
+
+    /**
      * @var bool $isSupplierStopSale
      */
     private $isSupplierStopSale;
@@ -144,6 +150,24 @@ class InventorySummary
     {
         $this->isOnRequest = $isOnRequest;
         return $this;
+    }
+
+    /**
+     * @return bool
+     * @since 1.2.0
+     */
+    public function isAllocationOnRequest(): bool
+    {
+        return $this->isAllocationOnRequest;
+    }
+
+    /**
+     * @param bool $isAllocationOnRequest
+     * @since 1.2.0
+     */
+    public function setIsAllocationOnRequest(bool $isAllocationOnRequest): void
+    {
+        $this->isAllocationOnRequest = $isAllocationOnRequest;
     }
 
     /**
