@@ -32,7 +32,7 @@ class InventorySummary
 
     /**
      * @var bool $isAllocationOnRequest
-     * @since 1.2.0 Added `isAllocationOnRequest` field
+     * @since v1.3.0 Added `isAllocationOnRequest` field
      */
     private $isAllocationOnRequest;
 
@@ -154,7 +154,7 @@ class InventorySummary
 
     /**
      * @return bool
-     * @since 1.2.0
+     * @since v1.3.0
      */
     public function isAllocationOnRequest(): bool
     {
@@ -163,7 +163,7 @@ class InventorySummary
 
     /**
      * @param bool $isAllocationOnRequest
-     * @since 1.2.0
+     * @since v1.3.0
      */
     public function setIsAllocationOnRequest(bool $isAllocationOnRequest): void
     {
