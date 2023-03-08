@@ -21,6 +21,12 @@
             "email": "leo.adamek@mrzen.com"
         }
     ],
+    "config": {
+        "platform": {
+            "php": "7.3.31"
+        }
+    },
+
     "require": {
         "php": ">=7.2",
         "ext-curl": "*",
