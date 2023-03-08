@@ -52,6 +52,17 @@ class Flight
      */
     private $flightNumber;
 
+
+    /**
+     * @var TransitStop $departureAirport
+     */
+    private $departureAirport;
+
+    /**
+     * @var TransitStop $arrivalAirport
+     */
+    private $arrivalAirport;
+
     /**
      * @return int
      */
@@ -220,6 +231,24 @@ class Flight
     public function setFlightNumber(string $flightNumber): Flight
     {
         $this->flightNumber = $flightNumber;
+        return $this;
+    }
+
+    /**
+     * @return TransitStop
+     */
+    public function getDepartureAirport(): TransitStop
+    {
+        return $this->departureAirport;
+    }
+
+    /**
+     * @param TransitStop $departureAirport
+     * @return Flight
+     */
+    public function setDepartureAirport(TransitStop $departureAirport): Flight
+    {
+        $this->departureAirport = $departureAirport;
         return $this;
     }
 }
