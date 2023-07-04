@@ -107,6 +107,16 @@ class TourCacheSearchResult
     private $perPersonGroupTravellerTotalDiscount;
 
     /**
+     * @var Promotion[] $singleTravellerPromos
+     */
+    private $singleTravellerPromos;
+
+    /**
+     * @var Promotion[] $groupTravellerPromos
+     */
+    private $groupTravellerPromos;
+
+    /**
      * @var FlightGroup[] $flightGroups
      */
     private $flightGroups;
@@ -601,6 +611,42 @@ class TourCacheSearchResult
     public function setFlightGroups(array $flightGroups): TourCacheSearchResult
     {
         $this->flightGroups = $flightGroups;
+        return $this;
+    }
+
+    /**
+     * @return Promotion[]
+     */
+    public function getSingleTravellerPromos(): array
+    {
+        return $this->singleTravellerPromos;
+    }
+
+    /**
+     * @param Promotion[] $singleTravellerPromos
+     * @return TourCacheSearchResult
+     */
+    public function setSingleTravellerPromos(array $singleTravellerPromos): TourCacheSearchResult
+    {
+        $this->singleTravellerPromos = $singleTravellerPromos;
+        return $this;
+    }
+
+    /**
+     * @return Promotion[]
+     */
+    public function getGroupTravellerPromos(): array
+    {
+        return $this->groupTravellerPromos;
+    }
+
+    /**
+     * @param Promotion[] $groupTravellerPromos
+     * @return TourCacheSearchResult
+     */
+    public function setGroupTravellerPromos(array $groupTravellerPromos): TourCacheSearchResult
+    {
+        $this->groupTravellerPromos = $groupTravellerPromos;
         return $this;
     }
 }
