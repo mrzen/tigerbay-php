@@ -9,12 +9,12 @@ namespace Mrzen\Tigerbay\Models;
 class Promotion
 {
     /**
-     * @var string $name
+     * @var string|null $name
      */
     private $name;
 
     /**
-     * @var string $description
+     * @var string|null description
      */
     private $description;
 
@@ -29,36 +29,36 @@ class Promotion
     private $priceSummary;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param string|null $name
      * @return Promotion
      */
-    public function setName(string $name): Promotion
+    public function setName($name): Promotion
     {
         $this->name = $name;
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->description;
     }
 
     /**
-     * @param string $description
+     * @param string|null $description
      * @return Promotion
      */
-    public function setDescription(string $description): Promotion
+    public function setDescription($description): Promotion
     {
         $this->description = $description;
         return $this;
