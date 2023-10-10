@@ -146,6 +146,23 @@ class TourCacheSearchResult
      */
     private $tags;
 
+
+    /**(
+     * @var bool $isGuaranteed
+     */
+    private $isGuaranteed;
+
+    public function isGuaranteed(): bool
+    {
+        return $this->isGuaranteed;
+    }
+
+    public function setIsGuaranteed(bool $isGuaranteed): TourCacheSearchResult
+    {
+        $this->isGuaranteed = $isGuaranteed;
+        return $this;
+    }
+
     /**
      * @return string
      */
