@@ -10,17 +10,22 @@ class TourCacheSearchRequest
     /**
      * @var DateTimeInterface|null $startDate
      */
-    private $startDate;
+    private $startDate = null;
 
     /**
      * @var DateTimeInterface|null $endDate
      */
-    private $endDate;
+    private $endDate = null;
+
+    /**
+     * @var string|null $tourCode
+     */
+    private $tourCode = null;
 
     /**
      * @return DateTimeInterface|null
      */
-    public function getStartDate(): DateTimeInterface
+    public function getStartDate(): ?DateTimeInterface
     {
         return $this->startDate;
     }
@@ -29,7 +34,7 @@ class TourCacheSearchRequest
      * @param DateTimeInterface|null $startDate
      * @return TourCacheSearchRequest
      */
-    public function setStartDate(DateTimeInterface $startDate): TourCacheSearchRequest
+    public function setStartDate(?DateTimeInterface $startDate): TourCacheSearchRequest
     {
         $this->startDate = $startDate;
         return $this;
@@ -38,7 +43,7 @@ class TourCacheSearchRequest
     /**
      * @return DateTimeInterface|null
      */
-    public function getEndDate(): DateTimeInterface
+    public function getEndDate(): ?DateTimeInterface
     {
         return $this->endDate;
     }
@@ -47,9 +52,27 @@ class TourCacheSearchRequest
      * @param DateTimeInterface|null $endDate
      * @return TourCacheSearchRequest
      */
-    public function setEndDate(DateTimeInterface $endDate): TourCacheSearchRequest
+    public function setEndDate(?DateTimeInterface $endDate): TourCacheSearchRequest
     {
         $this->endDate = $endDate;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTourCode(): ?string
+    {
+        return $this->tourCode;
+    }
+
+    /**
+     * @param string|null $tourCode
+     * @return $this
+     */
+    public function setTourCode(?string $tourCode): TourCacheSearchRequest
+    {
+        $this->tourCode = $tourCode;
         return $this;
     }
 
@@ -63,6 +86,10 @@ class TourCacheSearchRequest
 
         if ($this->getEndDate() !== null) {
             $v['searchQuery.serviceDateRange.to'] = $this->getEndDate()->format('Y-m-d');
+        }
+
+        if ($this->getTourCode() !== null) {
+            $v['searchQuery.tourCode'] = $this->getTourCode();
         }
 
         return $v;
