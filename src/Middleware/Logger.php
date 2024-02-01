@@ -4,7 +4,6 @@ namespace Mrzen\Tigerbay\Middleware;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-
 class Logger
 {
     /**
@@ -29,7 +28,7 @@ class Logger
         }
 
         // Create a logger and start logging interactions
-        $logger = new ZenLogger('libraries/tigerbay');
+        $logger = new \ZenLogger('libraries/tigerbay');
 
         return function(callable $handler) use ($logger) {
             return function(RequestInterface $request, array $options) use ($handler, $logger) {
@@ -40,10 +39,10 @@ class Logger
                         $end = microtime(true);
                         $delta = $end - $start;
 
-                        $level = $response->getStatusCode() >= 400 ? ZenLogger::ERROR : ZenLogger::INFO;
+                        $level = $response->getStatusCode() >= 400 ? \ZenLogger::ERROR : \ZenLogger::INFO;
 
                         $logger->log(
-                            "Request: {$request->getMethod()} \"{$request->getUri()->getPath()}\" ".
+                            "Request: {$request->getMethod()} \"{$request->getUri()->getPath()}{$request->getUri()->getQuery()}\" ".
                             $response->getStatusCode() . " " . number_format($delta*1000, 0) . 'ms',
                             [
                                 'request' => $request,
