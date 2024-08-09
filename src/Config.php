@@ -12,6 +12,13 @@ class Config
     private $baseURL;
 
     /**
+     * OAuth2 Token Request URL
+     *
+     * @var ?string $tokenURL
+     */
+    private $tokenURL = null;
+
+    /**
      * OAuth Client ID
      *
      * @var string $clientId
@@ -80,7 +87,7 @@ class Config
      * @param string $secret
      * @return Config
      */
-    public function setSecret($secret): Config
+    public function setSecret(string $secret): Config
     {
         $this->secret = $secret;
         return $this;
@@ -101,6 +108,16 @@ class Config
     public function setTimeout(float $timeout): Config
     {
         $this->timeout = $timeout;
+        return $this;
+    }
+
+    public function getTokenURL(): ?string {
+        return $this->tokenURL;
+    }
+
+    public function setTokenURL(?string $value): Config
+    {
+        $this->tokenURL = $value;
         return $this;
     }
 }

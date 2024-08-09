@@ -72,7 +72,7 @@ class Client
         $stack = HandlerStack::create();
         $stack->push(Logger::logger());
 
-        $tokenUrl = $config->getBaseURL() . '/auth/web/connect/token';
+        $tokenUrl = $config->getTokenURL() ?? $config->getBaseURL() . '/auth/web/connect/token';
         $stack->push(Authentication::oauth2($tokenUrl, $config->getClientId(), $config->getSecret(), $this->serializer));
 
         $this->client = new \GuzzleHttp\Client([
